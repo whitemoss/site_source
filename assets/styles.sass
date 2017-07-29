@@ -1,0 +1,57 @@
+---
+---
+
+$background-color: #F0E8E6 !default
+
+@import "minima"
+
+
+.my-wrapper
+  background-color: #D9D1CF
+  //background-image: url(img/background.jpg)
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2))
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2))
+  margin-right: auto
+  margin-left: auto
+  padding-right: $spacing-unit
+  padding-left: $spacing-unit
+  @extend %clearfix
+
+  +media-query(on-laptop)
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}))
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}))
+    padding-right: $spacing-unit / 2
+    padding-left: $spacing-unit / 2
+
+.my-footer-col
+  float: left
+  margin-bottom: $spacing-unit / 2
+  padding-left: $spacing-unit / 2
+
+.my-footer-col-1
+  width: -webkit-calc(50% - (#{$spacing-unit} / 2))
+  width:         calc(50% - (#{$spacing-unit} / 2))
+
+.my-footer-col-2
+  width: -webkit-calc(25% - (#{$spacing-unit} / 2))
+  width:         calc(25% - (#{$spacing-unit} / 2))
+
+.my-footer-col-3
+  width: -webkit-calc(25% - (#{$spacing-unit} / 2))
+  width:         calc(25% - (#{$spacing-unit} / 2))
+
++media-query($on-laptop)
+  .my-footer-col-1
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2))
+    width:         calc(100% - (#{$spacing-unit} / 2))
+
+  .my-footer-col-2,
+  .my-footer-col-3
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2))
+    width:         calc(50% - (#{$spacing-unit} / 2))
+
++media-query($on-palm)
+  .my-footer-col
+    float: none
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2))
+    width:         calc(100% - (#{$spacing-unit} / 2))

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <div class="item-images">
+    {% for file in site.static_files  %}
+      {% if file.path contains page.id  %}
+        <p><img src="{{ file.path }}" alt="{{ page.title | escape }}" /></p>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+</article>
