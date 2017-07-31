@@ -14,6 +14,20 @@ permalink: feedback.html
     <input type="email" name="_replyto" size="40" />
   </p>
   <p>
+    Выберите интересующее вас изделие: <br />
+    <select name="item" size="1">
+      <option disabled="disabled" selected="selected">-</option>
+      {% for collection in site.collections %}
+        {% if collection.label != "posts" %}
+          {% for item in collection.docs %}
+            <option value="{{ item.title | escape }}">{{ item.title | escape }}</option>
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+      <option value="Другое">Другое / указать в сообщении</option>
+    </select>
+  </p>
+  <p>
     Сообщение: <br />
     <textarea name="comment" cols="50" rows="10"></textarea>
   </p>
